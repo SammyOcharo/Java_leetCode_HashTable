@@ -29,24 +29,9 @@ public class NumberOfGoodPairs {
         for(int i=0; i < arrNumbers.length; i++){
             identicalCounts.put(arrNumbers[i], identicalCounts.getOrDefault(arrNumbers[i], 0) + 1);
             int count = identicalCounts.get(arrNumbers[i]);
-            System.out.println("the is the count number " + i +" "+ count);
             goodPairs += count - 1;
-            System.out.println("the is the total count number " + i +" "+ goodPairs);
-
         }
-
-        System.out.println(identicalCounts);
-        System.out.println(identicalCounts.values());
         return goodPairs;
-    }
-
-    public static void main(String[] args) {
-
-//        int[] nums2 = {1, 1, 1, 1};
-//        System.out.println("Output for nums2: " + NumberOfGoodPairs.numIdenticalPairs(nums2)); // Output: 6
-//
-//        int[] nums3 = {1, 2, 3};
-//        System.out.println("Output for nums3: " + NumberOfGoodPairs.numIdenticalPairs(nums3)); // Output: 0
     }
 
 }
