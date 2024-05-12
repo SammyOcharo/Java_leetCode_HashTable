@@ -50,5 +50,4 @@ public class HowManyNumbersSmallerThanCurrentNumber {
         return results;
     }
 
-
 }
