@@ -1,7 +1,6 @@
 package com.samdev.JavaLeetCodeHashTable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class DesignOrderedStream {
     //There is a stream of n (idKey, value) pairs arriving in an arbitrary order, where idKey is an integer between 1 and n and value is a string. No two pairs have the same id.
@@ -31,19 +30,19 @@ public class DesignOrderedStream {
     //// [] + ["aaaaa"] + ["bbbbb", "ccccc"] + [] + ["ddddd", "eeeee"] = ["aaaaa", "bbbbb", "ccccc", "ddddd", "eeeee"]
     //// The resulting order is the same as the order above.
 
-    private String[] stream;
+    private Map<Integer, String> stream;
     private int pointer;
 
     public DesignOrderedStream(int n){
-        stream = new String[n+1];
+        stream = new Hashtable<>();
         pointer = 1;
     }
 
     public List<String> insert(int idKey, String value){
-        stream[idKey] = value;
+        stream.put(idKey, value);
         List<String> chunk = new ArrayList<>();
-        while(pointer < stream.length && stream[pointer] != null){
-            chunk.add(stream[pointer]);
+        while(stream.containsKey(pointer)){
+            chunk.add(stream.get(pointer));
             pointer++;
         }
 
