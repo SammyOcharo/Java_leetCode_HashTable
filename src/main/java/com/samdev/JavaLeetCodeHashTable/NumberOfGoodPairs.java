@@ -1,6 +1,7 @@
 package com.samdev.JavaLeetCodeHashTable;
 
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 public class NumberOfGoodPairs {
@@ -23,7 +24,7 @@ public class NumberOfGoodPairs {
     //Output: 0
 
     public static int numIdenticalPairs(int[] arrNumbers){
-        Map<Integer, Integer> identicalCounts = new HashMap<>();
+        Map<Integer, Integer> identicalCounts = new Hashtable<>();
         int goodPairs = 0;
 
         for(int i=0; i < arrNumbers.length; i++){
