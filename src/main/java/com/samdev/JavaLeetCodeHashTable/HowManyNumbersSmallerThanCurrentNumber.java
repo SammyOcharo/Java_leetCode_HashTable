@@ -2,6 +2,7 @@ package com.samdev.JavaLeetCodeHashTable;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 public class HowManyNumbersSmallerThanCurrentNumber {
@@ -26,7 +27,7 @@ public class HowManyNumbersSmallerThanCurrentNumber {
     //Output: [0,0,0,0]
 
     public static int[] smallerNumbersThanCurrent(int[] arrNumber){
-        Map<Integer, Integer> counts = new HashMap<>();
+        Map<Integer, Integer> counts = new Hashtable<>();
 
         int[] sortedArray = arrNumber.clone();
 
