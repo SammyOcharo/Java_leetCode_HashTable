@@ -27,13 +27,14 @@ public class DecodeMessage {
 
 
     public static String decodeMessage(String Key, String message){
-
-        System.out.println(Key);
-
-        char [] alphabets = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        String alphabets = "abcdefghijklmnopqrstuvwxyz";
         Map<Character, Character> encoderMap = new LinkedHashMap<>();
-        for(int i=0; i < Key.length(); i++){
-            encoderMap.put(alphabets[i], Key.charAt(i));
+        int keyIndex = 0;
+        for(char c: Key.toCharArray()){
+            if (c != ' ' && !encoderMap.containsKey(c)) {
+                encoderMap.put(c, alphabets.charAt(keyIndex++));
+            }
+
         }
 
         System.out.println(encoderMap);
@@ -41,17 +42,12 @@ public class DecodeMessage {
         StringBuilder decodedWord = new StringBuilder();
 
         for(char c: message.toCharArray()){
-            char key = 0;
-            for(Map.Entry<Character, Character> entry: encoderMap.entrySet()){
-                if(entry.getValue() == c){
-                    key = entry.getKey();
-                    decodedWord.append(key);
-                    break;
-                }
-            }
             if(c == ' '){
                 decodedWord.append(' ');
+            }else{
+                decodedWord.append(encoderMap.get(c));
             }
+
         }
 
         return decodedWord.toString();
