@@ -11,7 +11,7 @@ public class BiFunctionHashMap {
         Map<String, Integer> exampleMap = new HashMap<>();
         exampleMap.put("1",1);
         exampleMap.put("2",4);
-        exampleMap.put("3",6);
+        exampleMap.put("3",null);
 
         System.out.println(exampleMap);
 
@@ -19,6 +19,9 @@ public class BiFunctionHashMap {
         System.out.println(exampleMap);
 
         try{
+            exampleMap.compute("3", (key, val) -> (val==null) ? 1: val+1);
+            System.out.println(exampleMap);
+
             exampleMap.compute(null, (key, val) ->  val+1);
             System.out.println(exampleMap);
         }catch(NullPointerException e){
