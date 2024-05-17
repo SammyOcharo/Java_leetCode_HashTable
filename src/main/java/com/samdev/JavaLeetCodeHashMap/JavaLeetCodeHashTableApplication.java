@@ -1,4 +1,4 @@
-package com.samdev.JavaLeetCodeHashTable;
+package com.samdev.JavaLeetCodeHashMap;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
