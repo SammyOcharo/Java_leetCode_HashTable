@@ -1,6 +1,5 @@
-package com.samdev.JavaLeetCodeHashTable;
+package com.samdev.JavaLeetCodeHashMap;
 
-import java.util.Hashtable;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
