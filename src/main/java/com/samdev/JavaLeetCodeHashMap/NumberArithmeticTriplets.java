@@ -28,18 +28,14 @@ public class NumberArithmeticTriplets {
     public static int arithmeticTriplets(int[] nums, int diff){
 
         Map<Integer, Integer> numsCombination = new HashMap<>();
-
+        int count = 0;
         for(int i=0; i < nums.length; i++){
-            for(int j=i+1; j<nums.length-1; j++){
-                if(Math.abs(nums[i]-nums[j]) == diff){
-                    numsCombination.put(i, j);
-                }
+            if(numsCombination.containsKey(nums[i]-diff) && numsCombination.containsKey(nums[i] - 2*diff)){
+                count++;
             }
+            numsCombination.put(nums[i], numsCombination.getOrDefault(nums[i], 0)+1);
         }
-
-        System.out.println(numsCombination);
-
-        return numsCombination.size();
+        return count;
     }
 
 }
