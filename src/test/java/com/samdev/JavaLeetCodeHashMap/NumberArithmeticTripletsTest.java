@@ -17,5 +17,6 @@ class NumberArithmeticTripletsTest {
 
         assertEquals(2, NumberArithmeticTriplets.arithmeticTriplets(nums, diff));
         assertEquals(2, NumberArithmeticTriplets.arithmeticTriplets(nums1, diff1));
+        assertNotEquals(3, NumberArithmeticTriplets.arithmeticTriplets(nums1, diff1));
     }
 }
