@@ -29,11 +29,11 @@ public class NumberArithmeticTriplets {
 
         Map<Integer, Integer> numsCombination = new HashMap<>();
         int count = 0;
-        for(int i=0; i < nums.length; i++){
-            if(numsCombination.containsKey(nums[i]-diff) && numsCombination.containsKey(nums[i] - 2*diff)){
+        for(int num: nums){
+            if(numsCombination.containsKey(num-diff) && numsCombination.containsKey(num - 2*diff)){
                 count++;
             }
-            numsCombination.put(nums[i], numsCombination.getOrDefault(nums[i], 0)+1);
+            numsCombination.put(num, numsCombination.getOrDefault(num, 0)+1);
         }
         return count;
     }
