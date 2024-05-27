@@ -21,7 +21,7 @@ public class SortPeople {
     //Explanation: The first Bob is the tallest, followed by Alice and the second Bob.
 
     public static String[] sortPeople(String[] names, int[] heights){
-        Map<Integer, String> mappedHeights = new TreeMap<>();
+        Map<Integer, String> mappedHeights = new TreeMap<>(Collections.reverseOrder());
 
         for(int i=0; i < heights.length; i++){
             mappedHeights.put(heights[i],names[i]);
